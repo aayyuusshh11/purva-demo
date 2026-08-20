@@ -11,13 +11,17 @@
 
 # CSS Techniques
 - Uses `object-fit: cover` as the standard approach for handling images of varying aspect ratios and dimensions gracefully without distortion. Confidence: 0.8
+- Prefers preserving each image's native aspect ratio in grid layouts rather than forcing a uniform card aspect-ratio (avoids cropping when possible). Confidence: 0.85
+- Prefers organic/varied tilt styling for images — wants a subtle tilted look but explicitly rejects uniform mechanical transforms where every image tilts in the same direction. Confidence: 0.8
 - Uses CSS `clamp()` for responsive typography sizing (e.g., `clamp(2.8rem, 6vw, 4rem)`). Confidence: 0.85
 - Uses subtle radial gradients with very low white-transparent opacities (e.g., `rgba(255,255,255,0.05)`) for background depth rather than solid fills. Confidence: 0.8
 
 # Glassmorphism
 - Uses specific glassmorphism values: `rgba(255,255,255,0.05)` transparent white backgrounds for containers, `rgba(0,0,0,0.45)` for label overlays, `blur(12px)` for card containers, and `blur(8px)` for labels. Confidence: 0.85
 
-# Workflow & Verification
+# Workflow & Communication
+- Prefers to be asked for confirmation rather than having the assistant assume details — explicitly says "don't assume anything ask me if you need". Confidence: 0.9
 - Inspects the project folder and reads files (README, directory listings) before writing code, to use actual filenames and paths rather than invented ones. Confidence: 0.9
 - URL-encodes image filenames in `src` attributes when they contain spaces or special characters (e.g., `WhatsApp%20Image%202026-08-19.jpeg`). Confidence: 0.8
 - Verifies file existence via system shell commands (e.g., `ls` or `for file in *.jpeg`) after creating the HTML, to confirm paths resolve correctly. Confidence: 0.8
+- Expects work to be pushed to git as a standard follow-up step after completing a task. Confidence: 0.85

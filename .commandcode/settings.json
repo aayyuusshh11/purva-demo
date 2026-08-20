@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Shell(start:*)"
+      "Shell(start:*)",
+      "Shell(powershell -Command \"for ($i=0; $i -lt 8; $i++) { $files = Get-ChildItem 'C:\\Users\\purva\\OneDrive\\Desktop\\purva-demo' -Filter 'WhatsApp Image 2026-08-20*.jpeg' | Sort-Object Name; } $files | ForEach-Object { Write-Output \\\"$($_.Name)`texists=$($_.Exists)`t$($_.Length) bytes\\\" }\")"
     ],
     "deny": [],
     "defaultMode": "default"
